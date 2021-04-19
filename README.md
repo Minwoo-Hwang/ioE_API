@@ -1,5 +1,7 @@
 # ioE_API
+
 ioE Service API
+
 <h2>접근</h2>
 <h3>로그인</h3>
 <ol>
@@ -28,4 +30,42 @@ ioE Service API
   </li><br>
   <li>로그아웃<br>POST /api/auth/logout</li><br>
   <li>쿠키 체크<br>GET /api/auth/check</li>
+</ol>
+<h3>디바이스</h3>
+<ol>
+  <li>등록<br>POST /api/devices<br>
+    
+    {
+        device: String(),
+        elv_id: String(),
+        building: String(),
+        address: String(),
+        username: String(),
+        email: String().email()
+    }
+    
+  </li><br>
+  <li>리스트<br>GET /api/devices</li><br>
+  
+  <li>단일 조회<br>GET /api/devices/:elvId</li><br>
+
+  <li>상태 업데이트<br>PATCH /api/devices/status/:deviceid<br>
+    
+    {
+      order: {
+          smps: Boolean(),
+          subport: Boolean(),
+      },
+      action:{
+          smps: Boolean(),
+          subport: Boolean()
+      },
+      input:{
+          safety: Boolean(),
+          door: Boolean(),
+          doorzone: Boolean()
+      }
+    }
+    
+  </li><br>
 </ol>
