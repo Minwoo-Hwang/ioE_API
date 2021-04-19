@@ -104,7 +104,6 @@ exports.get = async(ctx) => {
 
 exports.status = async(ctx) => {
     const {deviceid} = ctx.params;
-    const {order, action, input} = ctx.request.body;
     
     const schema = Joi.object().keys({ // 객체의 field 를 검증합니다.
         order: {
