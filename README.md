@@ -15,7 +15,7 @@ ioE Service API
   <li>로그인<br>POST /api/auth/login/local</li><br>
   
     {
-      "email": Email,
+      "username": ID,
       "password": String.min(6)
     }
   
