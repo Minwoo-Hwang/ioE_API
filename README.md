@@ -33,9 +33,9 @@ ioE Service API
 
 3. 중복확인
 
-   > 이메일 : GET /api/auth/exists/email/:value
+   + 이메일 : GET /api/auth/exists/email/:value
 
-   > 아이디 : GET /api/auth/exists/username/:value
+   + 아이디 : GET /api/auth/exists/username/:value
 
 
 4. 로그아웃
