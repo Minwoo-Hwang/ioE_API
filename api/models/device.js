@@ -13,6 +13,10 @@ const Device = new Schema({
         }
     },
     status: {
+        online: {
+            type: Boolean,
+            default: false
+        },
         order: {
             smps: Boolean,
             subport: Boolean,
