@@ -99,6 +99,7 @@ exports.get = async(ctx) => {
         ctx.status = 403; // Forbidden
         return;
     }
+    device = await Device.updateOnline(device);
     ctx.body = device;
 }
 

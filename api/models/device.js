@@ -105,5 +105,18 @@ Device.statics.updateStatus = function(deviceid, payload){
     return device;
 }
 
+Device.statics.updateOnline = function(query){
+    let device;
+    let now = new Date(Date.now());
+    let dateAdd = new Date(query.updatedAt);
+    dateAdd.setSeconds(dateAdd.getSeconds() + 5);
+    
+    (dateAdd > now) ? 
+    device = this.findOneAndUpdate(query.toJSON(), {"status.online" : true}, {new:true}) :
+    device = this.findOneAndUpdate(query.toJSON(), {"status.online" : false}, {new:true})
+
+    return device;
+}
+
 // 스키마를 모델로 변환하여, 내보내기 합니다.
 module.exports = mongoose.model('Device', Device);
